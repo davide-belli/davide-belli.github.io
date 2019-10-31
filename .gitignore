@@ -1,0 +1,6 @@
+.idea
+**/*.xcf
+images/bw-images
+
+blog-post-template.html
+styles.html

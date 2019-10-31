@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Davide Belli</title>
+    <meta name="description" content="">
+    <meta name="author" content="Blog Post">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- favicons
+     ================================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+<!-- header
+================================================== -->
+<!--<header>-->
+<!--    <div class="row">-->
+
+<!--        <div class="top-bar">-->
+<!--            <a class="menu-toggle" href="#"><span>Menu</span></a>-->
+
+<!--            <div class="logo">-->
+<!--                <a href="index.html">MENU</a>-->
+<!--            </div>-->
+
+<!--            <nav id="main-nav-wrap">-->
+<!--                <ul class="main-navigation">-->
+<!--                    <li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#about" title="">About</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#resume" title="">Resume</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>-->
+<!--                </ul>-->
+<!--            </nav>-->
+<!--        </div> &lt;!&ndash; /top-bar &ndash;&gt;-->
+
+<!--    </div> &lt;!&ndash; /row &ndash;&gt;-->
+<!--</header> &lt;!&ndash; /header &ndash;&gt;-->
+
+<!-- intro section
+================================================== -->
+<section id="intro-ggt">
+
+    <div class="intro-overlay"></div>
+
+    <div class="intro-content">
+        <div class="row">
+
+            <div class="col-twelve">
+
+                <h1>Generative Graph Transformer</h1>
+                <h5>Davide Belli, 7 October 2019</h5>
+
+                <!--                <p class="intro-position">-->
+                <!--                    <span>MSc Artificial Intelligence</span>-->
+                <!--                    <span>University of Amsterdam</span>-->
+                <!--                </p>-->
+
+                <!--                <a class="button stroke smoothscroll" href="#about" title="">More About Me</a>-->
+
+
+            </div>
+
+        </div>
+    </div> <!-- /intro-content -->
+
+    <ul class="intro-social">
+        <!--        <li><a href="https://www.linkedin.com/in/davide-belli-uva/"><i class="fa fa-linkedin"></i></a></li>-->
+        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+        <li><a href="https://github.com/davide-belli/generative-graph-transformer"><i class="fa fa-github"></i></a></li>
+        <li><a href="TODO"><i class="fa fa-file-pdf-o"></i></a></li>
+        <!--        <li><a href="https://twitter.com/davide__belli"><i class="fa fa-twitter"></i></a></li>-->
+    </ul> <!-- /intro-social -->
+
+</section> <!-- /intro -->
+
+
+<!-- about section
+================================================== -->
+<section id="about">
+
+    <div class="row section-intro">
+        <div class="col-twelve">
+
+            <div class="blog-div">
+
+                <h1>Introduction</h1>
+                <br>
+
+                <p class="lead-no-pad">Deep generative models for graphs have shown great promise in the area of drug
+                    design, but have so far found little application beyond generating graph-structured
+                    molecules. In this work, we demonstrate a proof of concept for the challenging
+                    task of road network extraction from image data introducing the <b>Generative Graph Transformer
+                        (GGT)</b>:
+                    a deep autoregressive model based on state-of-the-art attention mechanisms. In road network
+                    extraction, the goal is to learn to reconstruct graphs representing the road networks pictured in
+                    satellite images. A PyTorch implementation of GGT including is available <a href="https://github.com/davide-belli/generative-graph-transformer">here</a>.
+                </p>
+
+                <!--
+                <p class="lead-no-pad">Existing approaches (<a
+                        href="http://www.diva-portal.org/smash/get/diva2:1013270/FULLTEXT01.pdf">Muruganandham</a>,
+                    2016;
+                    <a href="https://arxiv.org/abs/1802.01445">Henry et al.</a>, 2018; <a
+                            href="https://arxiv.org/abs/1807.01232">Etten et al.</a>, 2018; <a
+                            href="https://www.mdpi.com/2072-4292/11/5/552">Gao et al.</a>, 2019; <a
+                            href="https://tech.fb.com/ai-is-supercharging-the-creation-of-maps-around-the-world/">Gao et
+                        al.</a>, 2019) for the automated extraction of road networks
+                    generate a semantic segmentation of the roads and then apply manually-engineered heuristics
+                    and post-processing steps to extract graph representations. In this work, we present a graph
+                    generative
+                    model to automatically
+                    extract road networks from semantic segmentation data, removing the necessity for post-processing
+                    heuristics and allowing for a complete end-to-end solution to the problem.</p>
+                    -->
+
+                <!--<p> When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+                    \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]</p>-->
+
+                <br><br>
+                <h1>Methods</h1>
+                <br>
+
+                <p class="lead-no-pad">The proposed GGT model is designed for the conditional, recurrent generation of
+                    graphs by means of the encoder-decoder architecture outlined in Fig. 1. Although in our experiments
+                    the model
+                    is specific to image-conditioning, the encoder could be easily changed to a different neural network
+                    to work with data, like graphs, text or feature vectors.</p>
+
+                <!--<img src="images/blog-ggt/architecture.png" alt="Generative Graph Transformer outline">-->
+
+                <figure>
+                    <img src="images/blog-ggt/architecture.png" alt="Generative Graph Transformer outline"
+                         style="width:100%">
+                    <figcaption>Fig. 1: Outline of the Generative Graph Transformer.</figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    In the image-conditioned generation, the encoder takes as input an image \(\mathbf{I} \in
+                    \mathbb{R}^{64\times 64}\) and emits a conditioning vector \(\mathbf{c} \in \mathbb{R}^{900}\),
+                    a compressed representation of the
+                    original input.
+                    The decoder takes as input the conditioning vector \(\mathbf{c}\) and recurrently generates the
+                    graph \(\mathcal{G} =
+                    \big(\tilde{\mathbf{A}} \in \mathbb{R}^{N \times N}, \tilde{\mathbf{X}} \in \mathbb{R}^{N \times
+                    2}\big)\) through a sequence of node and edge additions starting from the empty graph.
+
+                    To learn the generative process, we take
+                    inspiration from <a href="https://arxiv.org/abs/1802.08773">You et al. (2018)</a> and use a
+                    canonical ordering based on BFS.
+                    In our <a href="toulouse-road-network.html">blog post introducing the Toulouse Road Network
+                    dataset</a>,
+                    which we use to benchmark the GGT, we explain in details how the canonical ordering for the graphs
+                    is generated. In Fig. 2 we plot an example of canonical ordering for a graph based on the BFS.
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/canonical-ordering.png" alt="Canonical ordering of a graph"
+                         style="width:100%">
+                    <figcaption>Fig. 2: Example of canonical ordering for a graph based on BFS.</figcaption>
+                </figure>
+
+                <h2>Decoder</h2>
+
+                <p class="lead-no-pad">
+                    The decoder network in the GGT is based on transformer networks firstly introduced by <a
+                        href="https://arxiv.org/abs/1706.03762">Vaswani et al.</a>(2017).
+                    In Fig. 3 we present a schema of the decoder, labeling the main components.</p>
+
+                <figure>
+                    <img src="images/blog-ggt/decoder.png" alt="Decoder network outline"
+                         style="width:100%">
+                    <figcaption>Fig. 3: Outline of the decoder network in GGT.</figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    At every time-step \(t\) in the recurrent genreation, the decoder takes as input the conditioning
+                    vector
+                    \(\mathbf{c}\) and the representation of the last node generated in the sequence, described by its
+                    adjacency vector \( \tilde{\mathbf{a}}_{t-1}\) and node coordinates \( \tilde{\mathbf{x}}_{t-1}\).
+                    First, the concatenated inputs are positionally encoded and passed through a linear layer to obtain
+                    the first hidden representation of the current graph \[\mathbf{h}_{t}^{(0)} = \mathbf{W}_{in}
+                    \big(\big[\tilde{\mathbf{a}}_{t-1}, \tilde{\mathbf{x}}_{t-1}, \mathbf{c}_t \big] + \mathbf{p}_t\big)
+                    \in \mathbb{R}^d,\] where \(d=256\).
+                    Next, as in the original transformer networks, a sequence of \(L\times \) decoding blocks transform
+                    the representation of the graph as in:
+                    \[\tilde{\mathbf{h}}_t^{(l)} = \operatorname{LN}\big(\mathbf{h}_t^{(l)} +
+                    \operatorname{MultiHead}(\mathbf{h}_t^{(l)},\mathbf{h}_{&lt t}^{(l)})\big)\] and
+                    \[\mathbf{h}_t^{(l+1)} = \operatorname{LN}\big(\tilde{\mathbf{h}}_t^{(l)} +
+                    \mathbf{W}_n^{(l)}\operatorname{ReLU}(\mathbf{W}_m^{(l)}\tilde{\mathbf{h}}_t^{(l)})\big), \]
+                    finally obtaining the last hidden representation \(\mathbf{h}_t^{(L)}\). In these equations, the
+                    MultiHead operator refers to the self-attention as in
+                    <a href="https://arxiv.org/abs/1706.03762">Vaswani et al. (2017)</a>, LN is layer
+                    normalization <a href="https://arxiv.org/abs/1607.06450">(Ba et al., 2017)</a>, and \(
+                    \forall l, \quad \mathbf{W}_m^{(l)} \in \mathbb{R}^{2048\times d}\), \(\mathbf{W}_n^{(l)} \in
+                    \mathbb{R}^{d\times2048}\),
+                    \(\mathbf{h}_t^{(l)}, \tilde{\mathbf{h}}_t^{(l)} \in \mathbb{R}^d\).
+
+                    Following, two MLP heads are responsible for the emission of the node coordinates and adjacency
+                    vector representing the next node in the graph.
+                    Formally, they are defined as:
+                    \[ \tilde{\mathbf{x}}_t = \operatorname{tanh} \big( \mathbf{W}_{x2}
+                    \operatorname{ReLU}(\mathbf{W}_{x1} \mathbf{h}_t^{(L)})\big), \]
+                    \[ \tilde{\mathbf{a}}_t = \sigma \big( \mathbf{W}_{a2} \operatorname{ReLU}(\mathbf{W}_{a1}
+                    \mathbf{h}_t^{(L)})\big), \]
+                    where \(\mathbf{W}_{a1}, \mathbf{W}_{x1} \in \mathbb{R}^{128\times d}\), \(\mathbf{W}_{a2} \in
+                    \mathbb{R}^{M\times128}\), \(\mathbf{W}_{x2} \in \mathbb{R}^{2\times128}\), and \(M\) is the maximum
+                    size of the frontier in the BFS-ordering. The soft adjacency vector \(\tilde{\mathbf{a}}_t\) can be
+                    sampled or thresholded to obtain a binary vector.
+                </p>
+
+
+                <h2>Encoder</h2>
+
+                <p class="lead-no-pad">
+                    To condition the generative process, we use a simple CNN encoder which takes as input a semantic
+                    segmentation \(\mathbf{I} \in \mathbb{R}^{64\times 64}\) and emits a low-dimensional representation
+                    as
+                    \(\mathbf{c} =
+                    \operatorname{CNN}(\mathbf{I}) \in \mathbb{R}^{900}\).
+
+                    Furthermore, we introduce an image attention mechanism on the CNN encoder based
+                    on the context attention proposed by <a href="https://arxiv.org/abs/1502.03044">Xu et al. (2015)</a>,
+                    which we outline in Fig. 4.
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/encoder.png" alt="Encoder network outline"
+                         style="width:100%">
+                    <figcaption>Fig. 4: Outline of the encoder network in GGT.</figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    This mechanism is implemented as an MLP which takes as input the flattened visual features
+                    \(\mathbf{c}\) and the previously generated node features
+                    \(\tilde{\mathbf{x}}_{
+                    %lt t
+                    }\) and \(\tilde{\mathbf{a}}_{
+                    %lt t
+                    }\), and outputs a mask vector:
+                    \[ \mathbf{s}_t = \mathbf{W}_{c2} \operatorname{ReLU}(\mathbf{W}_{c1} [\tilde{\mathbf{a}}_{&lt t},
+                    \tilde{\mathbf{x}}_{&lt t}, \mathbf{c}]),\]
+                    \[ \mathbf{m}_t = \frac{\operatorname{exp}(\mathbf{s}_t)}{\sum_{i=1}^{|\mathbf{s}_t|}
+                    \operatorname{exp}({{\mathbf{s}}_t}_i)},\]
+                    \[ \mathbf{c_{t}} = \mathbf{{c}} \odot \mathbf{m}_t,\]
+                    where \({\mathbf{W}}_{c1}, {\mathbf{W}}_{c2}^\top \in \mathbb{R}^{1800\times 900}\),
+                    \(\mathbf{s}_t\) is the vector of attention scores of length \(|\mathbf{s}_t|=900\), and
+                    \(\mathbf{m}_t\) is the mask vector applied on the visual features through the element-wise product
+                    operation \(\odot\).
+                </p>
+
+                <h2>Training setup</h2>
+
+                <p class="lead-no-pad">
+                    To train the GGT we use a loss function which combines two components determining the quality of the
+                    generated graph:
+                    \[ \mathcal{L} \,\,= \,\, \lambda \mathcal{L}_{\mathbf{A}} + (1-\lambda) \mathcal{L}_{\mathbf{X}}
+                    \,\,=\,\, \lambda \operatorname{BCE}(\tilde{\mathbf{A}}, \mathbf{A}) + (1-\lambda)
+                    \operatorname{MSE}(\tilde{\mathbf{X}}, \mathbf{X})\]
+                    The Binary Cross Entropy between the target and predicted adjacency matrices captures the structural
+                    error, while the Mean Squared Error between target and predicted node coordinates captures the error
+                    in the position of the nodes. The hyperparameter \(\lambda\) regulates the tradeoff between the two
+                    loss components.
+                    The model is trained using teacher forcing. \( \)
+                </p>
+
+                <br><br>
+                <h1>Evaluation Metrics</h1>
+                <br>
+
+                <p class="lead-no-pad">
+                    To evaluate and compare the different models we need to choose a suitable metric.
+                    In particular, an effective evaluation metric should be able to capture the quality of reconstructed
+                    graphs while being independent from the ordering used to learn the generative process. Indeed, the
+                    generated
+                    graph may have additional or missing nodes while still describing accurately the road network.
+                    Moreover, we would like a metric to be invariant to graph transformations and node permutations, and
+                    efficient to compute.
+
+                    Since commonly used metrics do not satisfy these property, we introduce a new evaluation metric
+                    based on
+                    an approximation of the earth mover's distance which we call StreetMover distance.
+                    In Fig. 5 we sketch the steps taken to compute the StreetMover distance between a predicted and
+                    target graph.
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/streetmover.png" alt="Streetmover distance"
+                         style="width:100%">
+                    <figcaption>Fig. 5: Sketch of Streetmover distance between two graphs.</figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    To compute the Streetmover distance, we first approximate each graph by sampling equidistantly over
+                    the edges a 2D point cloud with a fixed number of points.
+                    Afterwards, we approximate with the Sinkhorn distance <a href="https://arxiv.org/abs/1306.0895">(Cuturi,
+                    2013)</a> the computation of the optimal transport cost
+                    between the two point clouds by means. This distance can be efficiently computed using sinkhorn
+                    iterations, which makes it a better candidate with respect to Wasserstein distance.
+                    By plotting the coupling matrix between the point clouds we can visually interepret the cost of
+                    moving streets or part of them to perfectly match the target road network.
+                    In Fig. 6 we visualize the Streetmover distance for different samples of target and predicted
+                    graphs.
+                    We see how our metric is effective in capturing the quality of the reconstructions, and we
+                    empirically choose to define accurate reconstructions the ones with Streetmover distance smaller
+                    than \(0.01\).
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/streetmover-examples.png" alt="Examples of Streetmover distances"
+                         style="width:90%">
+                    <figcaption>Fig. 6: Examples of Streetmover distances for various pairs of graphs.</figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    An alternative evaluation metric for road network comparison is the Average Path Length Similarity,
+                    introduced in .
+                    However, we choose not to use APLS as it requires some significant post-processing and it is mainly
+                    designed to capture errors in semantic segmentations of road networks rather than their graph
+                    representation.
+
+                    To support the scores obtained in terms of Streetmover distance, we also report additional
+                    evaluation metrics, like validation loss, average error in the number of nodes \(|V|\) and edges
+                    \(|E|\), and Wasserstein distance between histogram of node degree and diameters of the connected
+                    components.
+                </p>
+
+                <br><br>
+                <h1>Experimental Results</h1>
+                <br>
+
+                <p class="lead-no-pad">
+                    We run a series of experiment comparing the performance of GGT with several baseline models on the
+                    task
+                    of Road Network Extraction.
+                    The baseline models use the following decoder networks: a simple MLP, a simple GRU, GraphRNN
+                    extended for labeled graph generation, GRU and GraphRNN with self-attention.
+                    More details regarding the baselines are presented in the paper.
+                    The same hyper-parameter search is performed for all the model using a validation set.
+                </p>
+
+
+                <h2>Quantitative Results</h2>
+                <p class="lead-no-pad">
+                    In Table 1 we compare the performance of the Generative Graph Transformer with various baselines for
+                    the task of Road Network Extraction.
+                </p>
+
+
+                <figure>
+                    <img src="images/blog-ggt/table.png" alt="Quantitative evaluation"
+                         style="width:100%">
+                    <figcaption>Table 1: Comparison with the different baselines, and ablation study removing the
+                        context
+                        attention
+                        from the encoder (GGT without CA). Standard deviation is computed over 3 runs with each model.
+                    </figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    We notice how the simplest model with MLP decoder completely fails in reconstructing road network,
+                    while the recurrent generation of graphs through GRU and GraphRNN decoders seems more effective.
+                    Simple self-attentionmechanisms further improve the scores for the considered metrics. The best
+                    results are obtained with the Generative Graph Transformer decoder, especially when paired
+                    introducing context attention (CA) in the encoder.
+                    In this evaluation we set \( \lambda = 0.5 \). In further experiments reported in the paper, we
+                    explore the effect of changing this hyperparameter, and find the optimal values to be in the range
+                    \( [0.3, 0.7] \).
+                </p>
+
+
+                <h2>Qualitative Results</h2>
+                <p class="lead-no-pad">
+                    To validate the observations drawn from the quantitative study, we further validate the results
+                    through a set of qualitative studies.
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/comparison.png" alt="Comparison of models."
+                         style="width:100%">
+                    <figcaption>Fig. 7: Comparing reconstructions of road networks with different models.</figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    We first compare, in Fig. 7, the reconstruction of road networks randomly drawn from the test set
+                    using different models.
+                    The difference in accuracy among difference models is evident and in line with the previous
+                    numerical observations.
+
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/best-median-worst.png" alt="Comparison of reconstructed graphs."
+                         style="width:100%">
+                    <figcaption>Fig. 8: Investigating best, median and worst reconstructions of road networks.
+                    </figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    In Fig. 8 we only consider the Generative Graph Transformer and plot exampels of the best, median
+                    and worst reconstructions in the test set according to StreetMover distance.
+                    Graphs in the top 10&#37; are reconstructed almost perfectly, and are mostly simpe graphs with few
+                    edges and low branching factor.
+                    Graphs around the median of the StreetMover distance also have accurate reconstructions, with minor
+                    noise in the node coordinates. We see graphs with more complex structures like loops, high number of
+                    edges and branches, and many connnected components.
+                    Looking at some bad reconstruction, drawn from the bottom 1&#37; of the test set, we witness two
+                    types of failure from the model. In the first case, the model is generating some additional
+                    component which is not present in the original road network, or it is missing to generate some
+                    components from the ground-truth.
+                    In the second case, the model is completely failing to generate a meaningful graph. We notice that
+                    in this case the coordinates of the first emitted node are completely wrong, and this results in
+                    divergence in the generation of the rest of the BFS-ordered seqence of nodes. We hypotehsize, and
+                    leave it as future work, that more sophisticates sampling techniques like beam search would
+                    significanly reduce this type of failure.
+
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/sequence-attention.png" alt="Self-attention weights."
+                         style="width:100%">
+                    <figcaption>Fig. 9: Examples of the correlation between ground-truth adjacency matrices
+                        (left) and attention weights emitted by self-attention heads in intermediate GGT layers.
+                    </figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    By inspecting the self-attention layers in the GGT, we see in
+                    Fig. 9 how some heads are responsible for learning the structure in the graphs, emitting attention
+                    weights that highly correlate with the corresponding lower triangular adjacency matrices (lower
+                    triangular matrices are plotted because of the future masking in the self-attentive generation).
+                </p>
+
+                <figure>
+                    <img src="images/blog-ggt/larger-region.png" alt="Larger scale."
+                         style="width:90%">
+                    <figcaption>Fig. 10: Reconstruction of a larger 4×4 patch of the map (ground-truth on the left,
+                        reconstruction on the right).
+                    </figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    Finally, in Fig. 10, we show how graphs from adjacent patches can be easily merged to reconstruct
+                    road networks at larger scales. For this experiment we randomly select a 4x4 grid of datapoints in
+                    the test region and reconstruct the road networks using the GGT. We then use a simple
+                    post-processing step to join together closeby nodes laying in the borders of two consecutive
+                    patches.
+                    Although a very naive approach is used to merge together multiple graphs the structure of the larger
+                    region is modeled accurately.
+                </p>
+
+
+                <br><br>
+                <h1>Conclusion and Future Work</h1>
+                <br>
+
+                <p class="lead-no-pad">
+                    In this post we presented the Generative Graph Transformer, a deep
+                    autoregressive model based on self-attention for the recurrent, conditional generation of graphs.
+                    Moreover, we introduced the StreetMover distance, a scalable, efficient and permutation-invariant
+                    metric for graph comparison.
+                    We benchmarked the GGT for the task of road network extraction starting from segmentations of
+                    satellite images, comparing the results with many baselines.
+
+                    A challenge that remains open in this field is the development of a complete end-to-end solution
+                    combining semantic segmentation and graph extraction. Applying the proposed GGT model to other
+                    graph generation tasks, such as drug design, is another interesting direction for future work.
+                </p>
+
+            </div>
+
+        </div>
+    </div> <!-- /section-intro -->
+
+</section> <!-- /process-->
+
+
+<!-- contact
+================================================== -->
+<section id="contact">
+
+    <div class="row contact-info">
+
+        <div class="col-six tab-full">
+
+            <div class="icon">
+                <i class="icon-pin"></i>
+            </div>
+
+            <h5>Where to find me</h5>
+
+            <p>
+                Science Park 904<br>
+                1098 XH Amsterdam<br>
+                The Netherlands
+            </p>
+
+        </div>
+
+        <div class="col-six tab-full collapse">
+
+            <div class="icon">
+                <i class="icon-mail"></i>
+            </div>
+
+            <h5>Email Me At</h5>
+
+            <p>davidebelli95@gmail.com
+            </p>
+
+        </div>
+
+    </div> <!-- /contact-info -->
+
+</section> <!-- /contact -->
+
+
+<!-- footer
+================================================== -->
+
+<footer>
+    <div class="row">
+
+        <div style="text-align: center;">
+            <ul class="footer-social">
+                <li><a href="https://www.linkedin.com/in/davide-belli-uva"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/davide-belli"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://twitter.com/davide__belli"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="copyright">
+                <span>© Copyright 2019 </span>
+                <span>Created by <a href="https://www.linkedin.com/in/davide-belli-uva/">Davide Belli</a></span>
+                <span>Designed by <a href="http://www.styleshout.com/">styleshout</a></span>
+                <span>Distributed by <a href="https://themewagon.com/">themewagon</a></span>
+            </div>
+        </div>
+
+        <div id="go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+        </div>
+
+    </div> <!-- /row -->
+</footer>
+
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+
+<!-- Java Script
+================================================== -->
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

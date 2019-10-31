@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Toulouse Road Network dataset</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- favicons
+     ================================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+<!-- header
+================================================== -->
+<!--<header>-->
+<!--    <div class="row">-->
+
+<!--        <div class="top-bar">-->
+<!--            <a class="menu-toggle" href="#"><span>Menu</span></a>-->
+
+<!--            <div class="logo">-->
+<!--                <a href="index.html">MENU</a>-->
+<!--            </div>-->
+
+<!--            <nav id="main-nav-wrap">-->
+<!--                <ul class="main-navigation">-->
+<!--                    <li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#about" title="">About</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#resume" title="">Resume</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>-->
+<!--                    <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>-->
+<!--                </ul>-->
+<!--            </nav>-->
+<!--        </div> &lt;!&ndash; /top-bar &ndash;&gt;-->
+
+<!--    </div> &lt;!&ndash; /row &ndash;&gt;-->
+<!--</header> &lt;!&ndash; /header &ndash;&gt;-->
+
+<!-- intro section
+================================================== -->
+<section id="intro-trn">
+
+    <div class="intro-overlay"></div>
+
+    <div class="intro-content">
+        <div class="row">
+
+            <div class="col-twelve">
+
+                <h1>Toulouse Road Network dataset</h1>
+                <h5>Davide Belli, 26 October 2019</h5>
+
+                <!--                <p class="intro-position">-->
+                <!--                    <span>MSc Artificial Intelligence</span>-->
+                <!--                    <span>University of Amsterdam</span>-->
+                <!--                </p>-->
+
+                <!--                <a class="button stroke smoothscroll" href="#about" title="">More About Me</a>-->
+
+            </div>
+
+        </div>
+    </div> <!-- /intro-content -->
+
+    <ul class="intro-social">
+        <!--        <li><a href="https://www.linkedin.com/in/davide-belli-uva/"><i class="fa fa-linkedin"></i></a></li>-->
+        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+        <li><a href="https://github.com/davide-belli/toulouse-road-network-dataset"><i class="fa fa-github"></i></a>
+        </li>
+        <li><a href="TODO"><i class="fa fa-file-pdf-o"></i></a></li>
+        <!--        <li><a href="https://twitter.com/davide__belli"><i class="fa fa-twitter"></i></a></li>-->
+    </ul> <!-- /intro-social -->
+
+</section> <!-- /intro -->
+
+
+<!-- about section
+================================================== -->
+<section id="about">
+
+    <div class="row section-intro">
+        <div class="col-twelve">
+
+            <div class="blog-div">
+
+                <h1>Introduction</h1>
+                <br>
+
+                <p class="lead-no-pad">
+                    With this blog post we aim to introduce and present the <b>Toulouse Road Network dataset</b>,
+                    firstly
+                    introduced in <a href="https://arxiv.org/abs/TODO">Belli and Kipf (2019)</a>.
+                    This dataset is proposed to benchmark models in the task of road network extraction from
+                    segmentations of satellite images.
+                    The Python code to generate the dataset, the PyTorch interface for its usage as well as the
+                    instructions to download the ready-to-use dataset are available <a
+                        href="https://github.com/davide-belli/toulouse-road-network-dataset">here</a>.
+
+                    <br><br>
+                    In the general task of road network extraction the inputs are raw satellite images and the target is
+                    to reconstruct the underlying graph representation of the network.
+                    However, most recent approaches (<a
+                        href="http://www.diva-portal.org/smash/get/diva2:1013270/FULLTEXT01.pdf">Muruganandham, 2016</a>;
+                    <a href="https://arxiv.org/abs/1802.01445">Henry et al., 2018</a>; <a
+                        href="https://arxiv.org/abs/1807.01232">Etten et al., 2018</a>; <a
+                        href="https://www.mdpi.com/2072-4292/11/5/552">Gao et al., 2019</a>; <a
+                        href="https://tech.fb.com/ai-is-supercharging-the-creation-of-maps-around-the-world/">Gao et
+                    al., 2019</a>) are limited to the generation of semantic segmentation of road networks, possibly
+                    using hand-engineered post-processing steps and heuristics to finally extract a graph
+                    representation.
+                    In our work, we try to bridge the gap of introducing an automated, fully differentiable model which
+                    generates graph representations from semantic segmentations.
+                    We discuss the proposed model in another <a href="generative-graph-transformer.html">blog post
+                    introducing the Generative Graph Transformer</a>.
+
+                </p>
+
+                <br><br>
+                <h1>Dataset Generation</h1>
+                <br>
+
+
+                <p class="lead-no-pad">
+                    To generate the <b>Toulouse Road Network dataset</b> we start from publicly available raw data
+                    released by OpenStreetMap. <a href="http://www.openstreetmap.org">OpenStreetMap</a> is one of the
+                    biggest open-source web-applications for
+                    retrieving, reasoning and updating road maps and satellite data.
+                    In particular, <a href="http://www.geofabrik.de/data/shapefiles.html">GeoFabrik</a> publicly
+                    released a few datasets of cities containing geographical
+                    information like railways, road networks, buildings, waterways in shapefile format. To introduce a
+                    dataset for
+                    image-to-graph generation, we extract, process and label the raw road network data from the city of
+                    Toulouse, France, available on GeoFabrik and time-stamped June 2017.
+                    Fig. 1 shows the streets, railways, waterways contained in the shapefile data.
+                </p>
+
+                <figure>
+                    <img src="images/blog-trn/toulouse.png" alt="Toulouse streets, railways and waterways."
+                         style="width:100%">
+                    <figcaption>Fig. 1: Road networks, railways and waterways in the city of
+                        Toulouse. Image from <a href="http://www.geofabrik.de/data/shapefiles.html">GeoFabrik</a>.
+                    </figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    In the rest of the blog post, we discuss a sequence of pre-processing and filtering steps designed
+                    to convert the raw data provided in shapefile format to explicit graph structures.
+                    Further, we extract the road map dataset as image and graph pairs, define train, validation and test
+                    splits, and briefly present some statistics of the dataset. Finally, we present our approach to
+                    extract unique orderings over the graph components by fixing a canonical ordering based on node-wise
+                    BFS-ordering. For more detailed information on the dataset extraction and PyTorch interface we
+                    redirect the reader to the documentation in the <a
+                        href="https://github.com/davide-belli/toulouse-road-network-dataset">GitHub repository</a>.
+                </p>
+
+
+                <h2>Preprocessing</h2>
+                <p class="lead-no-pad">
+                    In the source data, each road in the map is described as a sequence of line segments, and
+                    intersection points between different roads are not modeled. In particular, the data represents over
+                    1100 squared kilometers of urban and extraurban area, with over 62,000 roads and 361,000 segments.
+                    A first sequence of transformations is used to extract a graph representation from the road
+                    segments, introducing new nodes in case of intersection, removing duplicate nodes and edges and
+                    normalizing node coordinates in \( [-1, +1] \).
+                    Afterwards, the whole map is divided in a grid of squares with a side length of 0.001 degrees,
+                    corresponding to around 110 metres.
+                    Each square in the grid is a candidate datapoint.
+
+                    <br><br>
+                    To remove noise in the graph representation to be learned by a deep learning model, we merge
+                    consecutive edges if the angle between them is close to \( \pi \), in particular where the incidence
+                    angle is between 75&deg and 90&deg.
+                    Furthermore, we merge together nodes if they are closer than \( {1 \over 20} \) the side of the
+                    square. In Fig. 2 we show an example of graph before and after the preprocessing. We use the same
+                    color for segments belonging to the same road in the original dataset.
+                </p>
+
+                <figure>
+                    <img src="images/blog-trn/preprocess.png" alt="Preprocessing."
+                         style="width:90%">
+                    <figcaption>Fig. 2: Effect of the preprocessing step to remove finer details, avoiding noise in the
+                        training process. The source image is shown on the left, the preprocessed version is on the
+                        right.
+                    </figcaption>
+                </figure>
+
+                <h2>Filtering</h2>
+                <p class="lead-no-pad">
+                    Taking a closer look at the graphs extracted until this point, we notice
+                    how a relevant percentage of the cells contain none or few segments of
+                    roads. We decide to filter the dataset generated so far by keeping only
+                    datapoints with at least 4 nodes in the graph. The reason motivating
+                    this filtering is that we consider trivial the automated extraction of simple
+                    graphs with less than 4 nodes from image representations. In addition to
+                    increasing the size of the dataset significantly and slowing the training
+                    process, it would be uninformative to test the capabilities of different
+                    generative models for such simple cases. We also remove the right tail
+                    of the graph distribution in terms of \(|V|\) and \(|E|\), in other words, outlier
+                    graphs with too many edges per image. These datapoints contain extremely
+                    cluttered and noisy graphs which are not informative and may harm the training process. The
+                    filtering of the right tail of the graph distribution is done at the 95th
+                    percentile of the distribution, removing graph with \(|V| \geq 10\) or \( |E| \geq 16\).
+                    At this point the graphs are plotted as grayscale \(64 \times 64\) semantic segmentations.
+                    In Fig. 3 we plot examples of road network segmentations extracted from the generated graph
+                    representations.
+                </p>
+
+                <figure>
+                    <img src="images/blog-trn/samples.png" alt="Examples of road network segmentations."
+                         style="width:100%">
+                    <figcaption>Fig. 3: Samples from the road map dataset. The number of edge
+                        and nodes can change significantly, as well as the degree distribution,
+                        the number of connected components, the positioning over the image
+                        and the presence of loops.
+                    </figcaption>
+                </figure>
+
+
+                <h2>Augmentation</h2>
+                <p class="lead-no-pad">
+                    Augmentation of the dataset is done at this point by translation (shift), rotation and
+                    flipping. In particular, we translate the image (and the graphs) vertically
+                    and/or horizontally by \({1 \over 4}\) , \( {2 \over 4}\) or \( {3 \over 4}\) of the square side
+                    (augmentation factor
+                    \( \times 16\)). For rotations we use \({\pi \over 2}\) , \({ \pi}\) and \({3 \pi \over 2}\)
+                    angles, optionally flipping the source image (augmentation factor \(\times 8\) ). The total factor
+                    of augmentation
+                    is \( \times 128\) times the original number of datapoints. For limits in computational resources,
+                    the dataset we use in our experiments and release to the public only includes augmentation by
+                    translation.
+                </p>
+
+
+                <h2>Dataset splits</h2>
+                <p class="lead-no-pad">
+                    Finally, we split the datasets in training, valida-
+                    tion and test sets. To have consistent splits in terms of the distribution of
+                    datapoints, we use a row-column splitting criteria, as shown in Fig. 4.
+                </p>
+
+                <figure>
+                    <img src="images/blog-trn/dataset-splits.png" alt="Criteria for splitting the dataset."
+                         style="width:100%">
+                    <figcaption>Fig. 4: The division of the whole dataset in train, validation and
+                        test splits is done through a row-column selection of validation and test
+                        sets. Small regions at the edge between two splits are discarded to avoid
+                        repetition of data due to the augmentation by shifting.
+                    </figcaption>
+                </figure>
+
+                <p class="lead-no-pad">
+                    The idea of this splitting is that we want to capture similar distributions
+                    of graphs in each set. In Fig. 1 we saw how some areas of the map have
+                    very cluttered road networks, while others have sparse networks or no
+                    roads at all. The proposed way of splitting the dataset enforces enough
+                    diversity inside each split, and similarity between the distributions in dif-
+                    ferent splits. Since we are using translation in the augmentation, we also
+                    remove the regions of the grid at the edge between two different dataset
+                    splits, to avoid repetition of (part of) the graphs in different splits. This
+                    way of splitting the dataset also minimize the number of datapoints dis-
+                    carded in the conflict regions, and this is why we avoid random selection
+                    over the map to split the dataset.
+                </p>
+
+                <p class="lead-no-pad">
+                    To ensure that the distribution of graphs in the training set is aligned
+                    with the ones in the validation and test set, we conduct a study on the
+                    marginal and joint distributions of |V | and |E| for different splits. In Fig.
+                    5 we plot the marginal distributions of the datapoints in the three splits as a function of the
+                    number of nodes |V | in each graph and then we do
+                    the same as a function of the number of edges |E|. Furthermore, in Fig.
+                    6 we compare the joint distributions of |V | and |E| for the three splits.
+                    We can see similar patterns in the marginal and joint distributions for
+                    different splits, confirming our hypothesis that the chosen criterium to split
+                    the dataset is effective in obtaining similar distributions in different splits.
+                </p>
+
+                <figure>
+                    <img src="images/blog-trn/marginal.png" alt="Marginal distributions for dataset splits."
+                         style="width:100%">
+                    <figcaption>Fig. 5: Marginal distributions of datapoints in function of the num-
+                        ber of nodes |V | or number of edges |E| for each split in the graph. We
+                        notice a very high alignment between the marginals for each of the three
+                        splits, with only a very little shift towards higher |V | and |E| for the
+                        test-set.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/blog-trn/joint.png" alt="Joint distributions for dataset splits."
+                         style="width:100%">
+                    <figcaption>Fig. 6: Joint distribution of datapoints in function of the number of
+                        nodes |V | and the number of edges |E| for each split in the graph. We use
+                        a logarithmic scale with base 10 on both axis to better visualize the behaviors
+                        in the right tail of the distributions.
+                    </figcaption>
+                </figure>
+
+
+                <p class="lead-no-pad">
+                    The Toulouse Road Network dataset released with our splits contains 111,034 data
+                    points (map tiles), of which 80,357 are in the training
+                    set (around 72.4%), 11,679 in the validation set (around
+                    10.5%), and 18,998 in the test set (around 17.1%).
+                </p>
+
+
+                <h2>Canonical Ordering</h2>
+                <p class="lead-no-pad">
+                    Each datapoint in our dataset is represented as a 64\(\times\)64 image and graph representation
+                    \(\mathbf{G} = (\mathbf{A}, \mathbf{X})\). However, since we are planning to generate the graph
+                    sequentially using a deep-autoregressive model, we need a linear representation of the road network.
+
+                    <br><br>
+                    For this, we take inspiration from <a href="https://arxiv.org/abs/1802.08773">You et al. (2018)</a>
+                    and fix a canonical ordering on the graphs based on BFS-ordering over the nodes.
+                    Since we are working with planar graphs, we also need to choose a consistent way to break ties in
+                    the BFS happening in case of branches in a node and the appearence of multiple connected components.
+                    For this, we always start traversing a new connected component by choosing the top-left unvisited
+                    node in the graph. This includes the selection of the first node in the BFS. To break ties in case
+                    of branches in a node, we ordered the outcoming edges in that node clock-wise with respect to the
+                    direction of the incoming edge.
+                    In Fig. 7 we plot the linearization of a graph using the described canonical ordering, including the
+                    example of ties in the branching which occurs the second time-step in the BFS.
+                </p>
+
+                <figure>
+                    <img src="images/blog-trn/canonical-ordering.png" alt="Canonical ordering of road networks."
+                         style="width:100%">
+                    <figcaption>Fig. 7: Example of canonical ordering over a graph, using the tie-
+                        breaking criteria on the branching in \(G_2\).
+                    </figcaption>
+                </figure>
+
+                <br><br>
+                <h1>Conclusion</h1>
+                <br>
+                <p class="lead-no-pad">
+                    The <b>Toulouse Road Network dataset</b> is designed for future research aiming at automated systems
+                    for
+                    road network extraction, and more in general, to test deep learning models in the context of
+                    image-to-graph generation. Being large, customizable, and coming with an easy-to-use PyTorch Dataset
+                    API, it is a good option for benchmarking new deep learning models.
+                </p>
+
+            </div>
+
+        </div>
+    </div> <!-- /section-intro -->
+
+</section> <!-- /process-->
+
+
+<!-- contact
+================================================== -->
+<section id="contact">
+
+    <div class="row contact-info">
+
+        <div class="col-six tab-full">
+
+            <div class="icon">
+                <i class="icon-pin"></i>
+            </div>
+
+            <h5>Where to find me</h5>
+
+            <p>
+                Science Park 904<br>
+                1098 XH Amsterdam<br>
+                The Netherlands
+            </p>
+
+        </div>
+
+        <div class="col-six tab-full collapse">
+
+            <div class="icon">
+                <i class="icon-mail"></i>
+            </div>
+
+            <h5>Email Me At</h5>
+
+            <p>davidebelli95@gmail.com
+            </p>
+
+        </div>
+
+    </div> <!-- /contact-info -->
+
+</section> <!-- /contact -->
+
+
+<!-- footer
+================================================== -->
+
+<footer>
+    <div class="row">
+
+        <div style="text-align: center;">
+            <ul class="footer-social">
+                <li><a href="https://www.linkedin.com/in/davide-belli-uva"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/davide-belli"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://twitter.com/davide__belli"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="copyright">
+                <span>© Copyright 2019 </span>
+                <span>Created by <a href="https://www.linkedin.com/in/davide-belli-uva/">Davide Belli</a></span>
+                <span>Designed by <a href="http://www.styleshout.com/">styleshout</a></span>
+                <span>Distributed by <a href="https://themewagon.com/">themewagon</a></span>
+            </div>
+        </div>
+
+        <div id="go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+        </div>
+
+    </div> <!-- /row -->
+</footer>
+
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+
+<!-- Java Script
+================================================== -->
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
