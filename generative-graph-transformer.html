@@ -122,7 +122,8 @@
                         (GGT)</b>:
                     a deep autoregressive model based on state-of-the-art attention mechanisms. In road network
                     extraction, the goal is to learn to reconstruct graphs representing the road networks pictured in
-                    satellite images. A PyTorch implementation of GGT including is available <a href="https://github.com/davide-belli/generative-graph-transformer">here</a>.
+                    satellite images. A PyTorch implementation of GGT is available <a
+                            href="https://github.com/davide-belli/generative-graph-transformer">here</a>.
                 </p>
 
                 <!--
@@ -149,11 +150,11 @@
                 <h1>Methods</h1>
                 <br>
 
-                <p class="lead-no-pad">The proposed GGT model is designed for the conditional, recurrent generation of
-                    graphs by means of the encoder-decoder architecture outlined in Fig. 1. Although in our experiments
-                    the model
-                    is specific to image-conditioning, the encoder could be easily changed to a different neural network
-                    to work with data, like graphs, text or feature vectors.</p>
+                <p class="lead-no-pad">The proposed GGT model is designed for the recurrent generation of graphs,
+                    conditioned on other data such as an image, by means of the encoder-decoder architecture outlined in
+                    Fig. 1. Although in our experiments the model
+                    is specific to image-conditioning, the encoder could be easily changed to have a generation
+                    conditioned on graphs, text, feature vectors, or not conditioned at all.</p>
 
                 <!--<img src="images/blog-ggt/architecture.png" alt="Generative Graph Transformer outline">-->
 
@@ -305,7 +306,7 @@
                     Moreover, we would like a metric to be invariant to graph transformations and node permutations, and
                     efficient to compute.
 
-                    Since commonly used metrics do not satisfy these property, we introduce a new evaluation metric
+                    Since commonly used metrics do not satisfy these properties, we introduce a new evaluation metric
                     based on
                     an approximation of the earth mover's distance which we call StreetMover distance.
                     In Fig. 5 we sketch the steps taken to compute the StreetMover distance between a predicted and
@@ -323,15 +324,14 @@
                     the edges a 2D point cloud with a fixed number of points.
                     Afterwards, we approximate with the Sinkhorn distance <a href="https://arxiv.org/abs/1306.0895">(Cuturi,
                     2013)</a> the computation of the optimal transport cost
-                    between the two point clouds by means. This distance can be efficiently computed using sinkhorn
+                    between the two point clouds by means. This distance can be efficiently computed using Sinkhorn
                     iterations, which makes it a better candidate with respect to Wasserstein distance.
-                    By plotting the coupling matrix between the point clouds we can visually interepret the cost of
+                    By plotting the coupling matrix between the point clouds we can visually interpret the cost of
                     moving streets or part of them to perfectly match the target road network.
                     In Fig. 6 we visualize the Streetmover distance for different samples of target and predicted
                     graphs.
-                    We see how our metric is effective in capturing the quality of the reconstructions, and we
-                    empirically choose to define accurate reconstructions the ones with Streetmover distance smaller
-                    than \(0.01\).
+                    We see how our metric is effective in capturing the quality of the reconstructions, with the
+                    distance value being closely related to the accuracy of the reconstructed graphs.
                 </p>
 
                 <figure>
@@ -358,7 +358,7 @@
                 <br>
 
                 <p class="lead-no-pad">
-                    We run a series of experiment comparing the performance of GGT with several baseline models on the
+                    We run a set of experiments comparing the performance of GGT with several baseline models on the
                     task
                     of Road Network Extraction.
                     The baseline models use the following decoder networks: a simple MLP, a simple GRU, GraphRNN

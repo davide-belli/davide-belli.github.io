@@ -116,11 +116,11 @@
                 <br>
 
                 <p class="lead-no-pad">
-                    With this blog post we aim to introduce and present the <b>Toulouse Road Network dataset</b>,
+                    This blog post presents the <b>Toulouse Road Network dataset</b>,
                     firstly
                     introduced in <a href="https://arxiv.org/abs/1910.14388">Belli and Kipf (2019)</a>.
-                    This dataset is proposed to benchmark models in the task of road network extraction from
-                    segmentations of satellite images.
+                    This dataset is proposed to benchmark models in the task of image-conditioned graph generation,
+                    specifically for road network extraction from segmentations of satellite image data.
                     The Python code to generate the dataset, the PyTorch interface for its usage as well as the
                     instructions to download the ready-to-use dataset are available <a
                         href="https://github.com/davide-belli/toulouse-road-network-dataset">here</a>.
@@ -137,7 +137,7 @@
                     al., 2019</a>) are limited to the generation of semantic segmentation of road networks, possibly
                     using hand-engineered post-processing steps and heuristics to finally extract a graph
                     representation.
-                    In our work, we try to bridge the gap of introducing an automated, fully differentiable model which
+                    In our work, we try to bridge this gap by introducing an automated, fully differentiable model which
                     generates graph representations from semantic segmentations.
                     We discuss the proposed model in another <a href="generative-graph-transformer.html">blog post</a>
                     introducing the Generative Graph Transformer.
@@ -247,7 +247,7 @@
 
                 <h2>Augmentation</h2>
                 <p class="lead-no-pad">
-                    Augmentation of the dataset is done at this point by translation (shift), rotation and
+                    At this point, we augment the dataset using translation (shift), rotation and
                     flipping. In particular, we translate the image (and the graphs) vertically
                     and/or horizontally by \({1 \over 4}\) , \( {2 \over 4}\) or \( {3 \over 4}\) of the square side
                     (augmentation factor
