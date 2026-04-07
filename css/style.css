@@ -460,6 +460,7 @@ footer {
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
     line-height: 1.5;
+    font-style: italic;
 }
 
 .publication-authors .author-highlight {
@@ -468,7 +469,7 @@ footer {
 }
 
 .publication-year {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--accent);
     margin-bottom: 0.75rem;
