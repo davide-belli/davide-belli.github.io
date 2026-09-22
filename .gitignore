@@ -2,6 +2,9 @@
 .qgenieagentrules/
 agent/
 
+# Local Codex agent configuration, memory, and skills
+.codex/
+
 # macOS system files
 .DS_Store
 .AppleDouble
